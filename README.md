@@ -1,7 +1,7 @@
 
 ---
 
-````markdown
+
 # SegSAM3
 
 > 基于 **SAM3 + Adapter + 联邦聚合** 的异构多模态医学图像分割实验框架  
