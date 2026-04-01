@@ -1,0 +1,45 @@
+{
+  "textbrats": {
+    "total": 369,
+    "train_1": 73,
+    "train_2": 74,
+    "test_1": 73,
+    "test_2": 74,
+    "val": 75
+  },
+  "brats2020": {
+    "total": 369,
+    "train_1": 73,
+    "train_2": 74,
+    "test_1": 73,
+    "test_2": 74,
+    "val": 75
+  },
+  "clients": {
+    "client_1": {
+      "type": "text_only",
+      "train": 73,
+      "test": 73,
+      "val": 75
+    },
+    "client_2": {
+      "type": "image_only",
+      "train": 73,
+      "test": 73,
+      "val": 75
+    },
+    "client_3": {
+      "type": "multimodal",
+      "text": {
+        "train": 74,
+        "test": 74,
+        "val": 75
+      },
+      "image": {
+        "train": 74,
+        "test": 74,
+        "val": 75
+      }
+    }
+  }
+}

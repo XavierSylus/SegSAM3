@@ -1,0 +1,28 @@
+# --- 忽略核心大数据目录（代码文件除外） ---
+data/source_images/
+data/federated_split/
+data/checkpoints/
+results/
+core_projects/
+
+# --- 忽略大模型权重文件 ---
+*.pt
+*.pth
+*.ckpt
+*.nii
+*.nii.gz
+
+# --- 忽略缓存和系统文件 ---
+__pycache__/
+.dvc/
+venv/
+.vscode/
+.ipynb_checkpoints/
+
+# --- 忽略日志、临时文件 ---
+logs/
+*.log
+*.zip
+*.csv
+dataset_info*.csv
+nul
