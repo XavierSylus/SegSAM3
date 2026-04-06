@@ -48,17 +48,7 @@ Vision Foundation Models (VFMs) like the 600M+ parameter SAM 3 exhibit remarkabl
 
 SegSAM3 adopts a highly decentralized, object-oriented design optimized for extensibility and strictly decoupled logic components.
 
-```mermaid
-graph TD
-    A["Raw 3D NIfTI Volumes"] -->|"Foreground-Aware Slicing"| B("2.5D Image Batches")
-    B --> C{"SAM 3 Frozen ViT Backbone"}
-    C -->|"Bypass"| D["Zero-Init Adapters"]
-    D -->|"Residual Add"| C
-    C --> E["Lightweight Mask Decoder"]
-    E --> F["Predicted Segmentation"]
-    F -->|"Loss Calculation"| G("0.5 Tversky + 0.5 Log-Dice")
-    G -->|"AdamW Optimization"| D
-```
+The inference pipeline operates as follows: Raw 3D NIfTI medical volumes are first transformed into **2.5D image batches** via a **foreground-aware slicing strategy** that probabilistically bypasses empty background slices. These batches are then fed into the **frozen SAM 3 ViT backbone** for feature extraction. Within each ViT encoder block, features are routed through a bypass branch into **zero-initialized adapters (Zero-Init Adapters)**, whose outputs are added back to the backbone via residual connections — enabling domain adaptation without disrupting the pretrained representations. The resulting feature maps are passed to a **lightweight mask decoder** to produce the final segmentation predictions. During training, gradients are computed through a **compound loss function (0.5 × Tversky + 0.5 × Log-Dice)**, and the AdamW optimizer **updates only the adapter parameters**, achieving efficient fine-tuning with less than 0.5% trainable parameters.
 
 ---
 
