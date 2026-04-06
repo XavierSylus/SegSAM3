@@ -50,14 +50,14 @@ SegSAM3 adopts a highly decentralized, object-oriented design optimized for exte
 
 ```mermaid
 graph TD
-    A[Raw 3D NIfTI Volumes] -->|Foreground-Aware Slicing| B(2.5D Image Batches)
-    B --> C{SAM 3 Frozen ViT Backbone}
-    C -->|Bypass| D[Zero-Init Adapters]
-    D -->|Residual Add| C
-    C --> E[Lightweight Mask Decoder]
-    E --> F[Predicted Segmentation]
-    F -->|Loss Calculation| G(0.5 Tversky + 0.5 Log-Dice)
-    G -->|AdamW Optimization| D
+    A["Raw 3D NIfTI Volumes"] -->|"Foreground-Aware Slicing"| B("2.5D Image Batches")
+    B --> C{"SAM 3 Frozen ViT Backbone"}
+    C -->|"Bypass"| D["Zero-Init Adapters"]
+    D -->|"Residual Add"| C
+    C --> E["Lightweight Mask Decoder"]
+    E --> F["Predicted Segmentation"]
+    F -->|"Loss Calculation"| G("0.5 Tversky + 0.5 Log-Dice")
+    G -->|"AdamW Optimization"| D
 ```
 
 ---
