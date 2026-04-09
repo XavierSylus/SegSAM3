@@ -115,7 +115,3 @@ SegSAM3/
 ```
 
 ---
-<div align="center">
-<i>Driven by curiosity, structured by discipline.</i><br>
-<b>SegSAM3</b> reflects my commitment to creating resilient, theoretically sound, and well-engineered solutions in Deep Learning.
-</div>
